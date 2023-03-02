@@ -20,7 +20,7 @@ function Game() {
   }
   return (
     <>
-      <div class="guess-results">
+      <div className="guess-results">
         {guesses.map(g => (
           <Guess key={g.id} guess={g.guess} />
         ))}
