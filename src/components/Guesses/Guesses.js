@@ -3,7 +3,7 @@ import { NUM_OF_GUESSES_ALLOWED } from "../../constants";
 import { range } from "../../utils";
 import Guess from "../Guess/Guess";
 
-function Guesses({ guesses }) {
+function Guesses({ answer, guesses }) {
 
   const allGuesses = range(NUM_OF_GUESSES_ALLOWED);
 
@@ -12,7 +12,7 @@ function Guesses({ guesses }) {
     for (let i = 0; i < allGuesses.length; i++) {
       const g = i < guesses.length ? guesses[i] : { id: i, guess: '' };
       result.push(
-        <Guess key={g.id} guess={g.guess} />
+        <Guess key={g.id} answer={answer} guess={g.guess} />
       );
     }
     return result;
